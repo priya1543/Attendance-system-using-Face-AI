@@ -10,7 +10,7 @@ Additionally, professors can quickly verify attendance on an excel sheet by usin
 
 ## How we built it:
 
-We built it by using HTML, CSS, Javascript for front-end and 
+We built it by using HTML, CSS, Javascript for the front-end and python, SQL database, express js, and predefined libraries like face-api.js for the back-end.
 
 ## What's next for the Attendance system using Face AI
 In the future, we'll concentrate on improving our website by giving students the option to view their attendance records and overall attendance percentage, as well as options to post links for specific subjects where a student can verify and log in for that particular subject and mark their attendance, making it easy for schools and institutions that record attendance for each subject.
