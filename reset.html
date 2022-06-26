@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset ="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> resetpassword-page </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="header">
+    <a href="home.html" class="logo"> Quckr </a>
+    <nav class="navbar">
+<a href="home.html"> Home </a>
+<a href="profile.html"> Profile </a>
+    </nav>
+  </section>
+  <div class="reset">
+  <h1> Reset password </h1>
+  <div class="box-container">
+  <div class="box">
+  <form id="form">
+  <div class="form-control">
+  <h3> Enter old password </h3>
+  <input type="text" id="oldp">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+<div class="form-control">
+  <h3> Enter new password</h3>
+  <input type="text" id="newp">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+<div class="form-control">
+  <h3> Re-enter new password</h3>
+  <input type="text" id="newrp">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+  <div>
+    <button type="submit" class="btn"> Reset </button>
+  </div>
+  </form>
+  </div>
+</div>
+</div>
+</body>
+<script>
+const form=document.getElementById("form");
+const oldp=document.getElementById("oldp");
+const newp=document.getElementById("newp");
+const newrp=document.getElementById("newrp");
+form.addEventListener('submit',e =>{
+  e.preventDefault();
+  if (checkInput()){
+    window.location.href="index.html";
+    alert("Password reset successful. Login again to continue.");
+  }
+});
+
+function checkInput(){
+  const oldpvalue=oldp.value.trim();
+  const newpvalue=newp.value.trim();
+  const newrpvalue=newrp.value.trim();
+  if (oldpvalue===''){
+    setError(oldp,'Please enter old password.');
+  }
+  else{
+    return true;
+  }
+  if (newpvalue===''){
+    setError(newp,'Please enter new password.');
+  }
+  else{
+    return true;
+  }
+  if (newrpvalue===''){
+    setError(newrp,'Please re-enter new password.');
+  }
+  else{
+    return true;
+  }
+}
+function setError(input,message){
+  const formControl=input.parentElement;
+  const small=formControl.querySelector('small');
+  formControl.className='form-control error';
+  small.innerText=message;
+}
+</script>
+</html>

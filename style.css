@@ -1,0 +1,266 @@
+/*general*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+font-family: 'Lora', serif;
+a{
+  text-decoration: none;
+}
+
+section{
+  padding: 100px 10%;
+}
+h1{
+  font-size: 40px;
+  margin-bottom:50px;
+  color:#050A30;
+}
+h3{
+  font-size:15px;
+  color:#05263B;
+}
+body{
+margin: 0;
+text-align: center;
+background-image: url("bg.png");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+margin-bottom: 100px;
+}
+
+input{
+  width: 400px;
+  height:30px;
+	padding:3px;
+	font-size: 20px;
+	outline: none;
+	border: 1px solid silver;
+  border-radius: 3px;
+}
+input:focus{
+	border: 1.2px solid #090A0E;
+}
+.form-control.error input{
+  border-color:#970C10;
+}
+.form-control i{
+  visibility: hidden;
+}
+.form-control.error i{
+  visibility: visible;
+  color:#970C10;
+}
+.form-control small{
+  color:#970C10;
+  visibility: hidden;
+}
+.form-control.error small{
+  visibility: visible;
+}
+.header{
+  position:sticky;
+  top:0; left:0; right:0;
+  z-index: 10000;
+  background:#071330;
+  display: flex;
+  padding:0;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right:100px;
+  padding-left: 60px;
+  margin:0;
+}
+
+.header .logo{
+  font-size: 40px;
+  color:#C3CEDA;
+  text-decoration: none;
+}
+
+.header .navbar a{
+  font-size: 20px;
+  margin-left: 50px;
+  color:#C3CEDA;
+  text-decoration: none;
+}
+
+.header .navbar a:hover{
+  color:#71D5E4;
+}
+
+nav ul{
+  padding:0;
+  margin:0;
+  float:right;
+  margin-right: 30px;
+}
+
+nav ul li{
+  position: relative;
+  list-style: none;
+  display:inline-block;
+}
+
+nav ul li a{
+  display: block;
+  padding: 0 15px;
+  color:black;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 30px;
+  width: 200px;
+  background:#212223 ;
+  color:#BBC4C2;
+  font-size:18px;
+  padding:10px;
+  cursor:pointer;
+  border-radius: 6px ;
+  text-decoration: none;
+  visibility: visible;
+}
+.btn:hover{
+  background-color:#1F252F ;
+  color:#BBC4C2;
+}
+
+
+/* login page*/
+.sign-up-login{
+  margin-top: 20px;
+}
+.sign-up-login a{
+  color:#050A30;
+  text-decoration:underline;
+  font-size: 20px;
+  font-weight: bold;
+}
+.sign-up-login a:hover{
+  color:#4A0D4A;
+  text-decoration: none;
+  font-size: 20px;
+}
+.login{
+  padding-top: 100px;
+}
+.login .box-container{
+  display:flex;
+  justify-content:space-around;
+  text-align: center;
+  margin: 0 100px;
+}
+
+/*sign-up page*/
+
+#home-button .btn{
+  padding:20px;
+}
+
+.signup-form button{
+  margin-bottom:60px;
+}
+
+.signup-form h1{
+  padding-top:20px;
+  margin: 0;
+}
+.box-container{
+  background-color:
+  padding:50px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(256px,20px));
+  gap:450px;
+  text-align: left;
+  padding-bottom: 0;
+  margin-left: 100px;
+}
+
+.box-container .box{
+  margin-top:30px;
+  background-color: #E1ECF0;
+  border: 1px solid #003A64;
+  border-radius: 10px;
+  width:500px;
+  padding: 50px 30px;
+  padding-top:0;
+}
+
+
+/*profile page*/
+
+.profile h1{
+  margin-top: 50px;
+  margin-bottom: 0;
+  text-align: center;
+}
+h4{
+  margin: 20px 0;
+  margin-right:0;
+  border: 1px solid silver;
+  border-radius: 3px;
+  width: 400px;
+  height:30px;
+  padding:3px;
+  font-size: 20px;
+}
+
+.profile-buttons .btn a{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-left:250px;
+  margin-right:300px;
+}
+
+.profile img{
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+  border: 1px solid #003A64;
+  border-radius: 100px;
+}
+
+.profile-pic h3{
+  color:#071330;
+  font-size: 25px;
+}
+.profile-pic img{
+  display: none;
+}
+/*forgot password*/
+.forgot .box-container{
+  display:flex;
+  justify-content:space-around;
+  text-align: center;
+  margin: 0 100px;
+}
+
+.forgot h1{
+  margin-top:100px;
+  margin-bottom: 0;
+}
+
+
+/*reset password*/
+.reset .box-container{
+  display:flex;
+  justify-content:space-around;
+  text-align: center;
+  margin: 0 100px;
+
+}
+
+/*facedetection*/
+#video video{
+  float:none;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}

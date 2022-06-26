@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset ="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> login-page </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="login">
+    <h1> Login/ Sign-in </h1>
+    <div class="box-container">
+      <div class="box">
+    <form id="form" class="login-form">
+    <div class="form-control">
+      <h3>Username</h1>
+      <input type="text" id="username">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+    <div class="form-control">
+      <h3>Password</h1>
+      <input type="password" id="password">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+      <div>
+      <button type="submit" class="btn">Login</button>
+    </div>
+    </form>
+  </div>
+</div>
+  </div>
+    <div class="sign-up-login">
+      <a href="forgot.html"> Forgot password </a>
+    </div>
+     <div class="sign-up-login">
+       <a href="signup.html"> Click here to Sign-up </a>
+    </div>
+</body>
+<script>
+const form=document.getElementById("form");
+const username=document.getElementById("username");
+const password=document.getElementById("password");
+
+form.addEventListener('submit',e =>{
+  e.preventDefault();
+  if (checkInput()){
+    window.location.href="home.html";
+    alert("Login successful.");
+  }
+});
+
+function checkInput(){
+  const usernamevalue=username.value.trim();
+  const passwordvalue=password.value.trim();
+  if (usernamevalue===''){
+    setError(username,'Username cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (passwordvalue===''){
+    setError(password,'Password cannot be blank.');
+  }
+  else{
+    return true;
+  }
+}
+function setError(input,message){
+  const formControl=input.parentElement;
+  const small=formControl.querySelector('small');
+  formControl.className='form-control error';
+  small.innerText=message;
+}
+</script>
+</html>

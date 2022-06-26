@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset ="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> signup-page </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="margin:0;">
+  <section class="header">
+    <a href="home.html" class="logo"> Quckr </a>
+    <nav class="navbar">
+<a href="index.html"> Login</a>
+    </nav>
+  </section>
+    <form class="signup-form" id="form">
+  <h1> Create a profile </h1>
+  <div class="box-container">
+  <div class="box">
+        <div class="form-control">
+      <h3> Enter firstname </h3>
+      <input type="text" id="firstname">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Enter lastname</h3>
+      <input type="text" id="lastname">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Enter enrollment number</h3>
+      <input type="text" id="rollno">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Enter email address</h3>
+      <input type="text" id="emailid">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+    </div>
+    <div class="box">
+          <div class="form-control">
+      <h3> Enter mobile number</h3>
+      <input type="text" id="mobno">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Enter username </h3>
+      <input type="text" id="username">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Enter password </h3>
+      <input type="password" id="pass">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+          <div class="form-control">
+      <h3> Re-enter password </h3>
+      <input type="password" id="repass">
+      <i class="fas fa-exclamation-circle"></i>
+      <div><small> Error message. </small></div>
+    </div>
+    </div>
+    </div>
+      <div class="profile-pic">
+        <h3> Take photo or upload image </h3>
+        <img src="profile.png" id="photo">
+        <input type="file" id="file"/ required>
+      </div>
+      <div><button type="submit" class="btn">Register</button></div>
+   </form>
+<script>
+const form=document.getElementById("form");
+const firstname=document.getElementById("firstname");
+const lastname=document.getElementById("lastname");
+const rollno=document.getElementById("rollno");
+const emailid=document.getElementById("emailid");
+const mobno=document.getElementById("mobno");
+const username=document.getElementById("username");
+const password=document.getElementById("pass");
+const repass=document.getElementById("repass");
+
+form.addEventListener('submit',e =>{
+  e.preventDefault();
+  if(checkInput()){
+    alert("User registration successful.");
+    window.location.href="index.html";
+  }
+});
+
+function checkInput(){
+  const firstnamevalue=firstname.value.trim();
+  const lastnamevalue=lastname.value.trim();
+  const rollnovalue=rollno.value.trim();
+  const emailidvalue=emailid.value.trim();
+  const mobnovalue=mobno.value.trim();
+  const repassvalue=repass.value.trim();
+  const usernamevalue=username.value.trim();
+  const passwordvalue=password.value.trim();
+  if (firstnamevalue===''){
+    setError(firstname,'Firstname cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (lastnamevalue===''){
+    setError(lastname,'Lastname cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (rollnovalue===''){
+    setError(rollno,'Enrollment number cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (emailidvalue===''){
+    setError(emailid,'Email id cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (mobnovalue===''){
+    setError(mobno,'Mobile number cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (usernamevalue===''){
+    setError(username,'Username cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (passwordvalue===''){
+    setError(password,'Password cannot be blank.');
+  }
+  else{
+    return true;
+  }
+  if (repassvalue===''){
+    setError(repass,'Password cannot be blank.');
+  }
+  else if(passwordvalue!==repassvalue){
+    setError(repass,'Password does not match');
+  }
+  else{
+    return true;
+  }
+}
+function setError(input,message){
+  const formControl=input.parentElement;
+  const small=formControl.querySelector('small');
+  formControl.className='form-control error';
+  small.innerText=message;
+}
+/*
+const imgDiv = document.querySelector('.profile-pic');
+const img = document.querySelector('#photo');
+const file = document.querySelector('#file');
+const uploadBtn = document.querySelector('.btn');
+imgDiv.addEventListener('mouseenter', function(){
+    uploadBtn.style.display = "block";
+});
+imgDiv.addEventListener('mouseleave', function(){
+    uploadBtn.style.display = "none";
+});
+file.addEventListener('change', function(){
+    const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function(){
+            img.setAttribute('src', reader.result);
+        });
+
+        reader.readAsDataURL(choosedFile);
+    }
+});*/
+
+ </script>
+</html>

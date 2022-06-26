@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset ="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> home-page </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="header">
+    <a href="home.html" class="logo"> Quckr </a>
+    <nav class="navbar">
+      <a href="home.html"> Home</a>
+<a href="profile.html"> Profile </a>
+<a href="index.html" onclick="alert('Logged out successfully.')"> Log out </a>
+    </nav>
+  </section>
+  <h3>Please ensure there is proper lighting and your face is clearly visible to verify your face.</h3>
+  <video id="video" autoplay=true></video>
+  <div>
+  <button id="submit" type="submit" class="btn"> Click here to redirect to your class. </button>
+</div>
+</body>
+<script>
+
+let video=document.getElementById("video");
+const setupCamera= ( )=>{
+  navigator.mediaDevices.getUserMedia({
+    video:{width: 600,height:400 },
+      audio:false,
+  })
+  .then((stream)=>{
+    video.srcObject=stream;
+  });
+};
+setupCamera();
+
+ </script>
+</html>

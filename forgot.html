@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset ="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> forgotpassword-page </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <section class="header">
+    <a href="home.html" class="logo"> Quckr </a>
+    <nav class="navbar">
+<a href="signup.html">Signup</a>
+    </nav>
+  </section>
+  <div class="forgot">
+  <h1> Forgot password </h1>
+  <div class="box-container">
+  <div class="box">
+    <form id="form">
+    <div class="form-control">
+  <h3> Enter email address or mobile number</h3>
+  <input type="text" id="emailid">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+  <div class="form-control">
+  <h3> Enter 6-digit code that is sent to your email-address or mobile number</h3>
+  <input type="text" id="code">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+  <div class="form-control">
+  <h3> Enter new password</h3>
+  <input type="text" id="newp">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+  <div class="form-control">
+  <h3> Re-enter new password</h3>
+  <input type="text" id="newrp">
+  <i class="fas fa-exclamation-circle"></i>
+  <div><small> Error message. </small></div>
+</div>
+  <div>
+    </form>
+    <button type="submit" class="btn"> Reset </a>
+  </div>
+</div>
+</div>
+</div>
+</body>
+<script>
+const form=document.getElementById("form");
+const emailid=document.getElementById("emailid");
+const code=document.getElementById("code");
+const password=document.getElementById("newp");
+const repassword=document.getElementById("newrp");
+
+form.addEventListener('submit',e =>{
+  e.preventDefault();
+  if (checkInput()){
+    window.location.href="index.html";
+    alert("Password change successful.Login again to continue.");
+  }
+});
+
+function checkInput(){
+  const idvalue=emailid.value.trim();
+  const codevalue=code.value.trim();
+  const passwordvalue=password.value.trim();
+  const repasswordvalue=repassword.value.trim();
+  if (idvalue===''){
+    setError(emailid,'Please enter email address or mobile number');
+  }
+  else{
+    return true;
+  }
+  if (codevalue===''){
+    setError(code,'Please enter the 6-digit code.');
+  }
+  else{
+    return true;
+  }
+  if (passwordvalue===''){
+    setError(password,'Please enter new password');
+  }
+  else{
+    return true;
+  }
+if (repasswordvalue===''){
+  setError(repassword,'Please re-enter new password');
+}
+else if(passwordvalue!==repasswordvalue){
+  setError(repassword,'Passwords does not match');
+}
+else{
+  return true;
+}
+}
+function setError(input,message){
+  const formControl=input.parentElement;
+  const small=formControl.querySelector('small');
+  formControl.className='form-control error';
+  small.innerText=message;
+}
+</script>
+</html>
